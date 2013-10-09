@@ -1,0 +1,787 @@
+/*
+Theme Name: Lightweight Personal
+Description: Responsive, HTML5 and CSS3, light, widgetized sidebar and footer, translation ready, SEO friendly WordPress theme with stylish design. Perfect for personal blog. Possible to use custom header and footer menu.
+Author: ThemeMotive.com
+Author URI: http://thememotive.com/
+Version: 1.5
+Tags: brown, two-columns, fixed-width, editor-style, sticky-post, threaded-comments, translation-ready, custom-menu
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+/*
+The Droid Sans and Droid Serif font families are:
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+/*
+
+/* Custom fonts
+------------------------------------------ */
+@font-face {font-family: 'DroidSerif'; src: url('fonts/DroidSerif-Regular-webfont.eot'); src: url('fonts/DroidSerif-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/DroidSerif-Regular-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'DroidSerif'; src: url('fonts/DroidSerif-Italic-webfont.eot'); src: url('fonts/DroidSerif-Italic-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/DroidSerif-Italic-webfont.woff') format('woff'); font-weight: normal; font-style: italic;}
+@font-face {font-family: 'DroidSerif'; src: url('fonts/DroidSerif-Bold-webfont.eot'); src: url('fonts/DroidSerif-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/DroidSerif-Bold-webfont.woff') format('woff'); font-weight: bold; font-style: normal;}
+@font-face {font-family: 'DroidSerif'; src: url('fonts/DroidSerif-BoldItalic-webfont.eot'); src: url('fonts/DroidSerif-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/DroidSerif-BoldItalic-webfont.woff') format('woff'); font-weight: bold; font-style: italic;}
+@font-face {font-family: 'DroidSans'; src: url('fonts/DroidSans-webfont.eot'); src: url('fonts/DroidSans-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/DroidSans-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'DroidSans'; src: url('fonts/DroidSans-Bold-webfont.eot'); src: url('fonts/DroidSans-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/DroidSans-Bold-webfont.woff') format('woff'); font-weight: bold; font-style: normal;}
+
+/* Reset browser styles
+------------------------------------------ */
+* {margin: 0; padding: 0}
+html {overflow: scroll;}
+body {background: #f6f3e4; color: #3a3736; font: 0.75em/1.5em "Verdana", sans-serif;}
+dt {font-weight: 700;}
+table {border-collapse: collapse;}
+img {border: none; vertical-align: middle;}
+ul[class] {list-style: none;}
+a {color: #b1481b; -moz-transition: color 0.3s; -webkit-transition: color 0.3s; -o-transition: color 0.3s; transition: color 0.3s; text-decoration: none;}
+a:hover {color: #bc5a27; text-decoration: underline;}
+a * {cursor: pointer;}
+textarea, input, select, option, optgroup, button {font-size: 1em; vertical-align: middle;}
+button, [type="radio"], [type="checkbox"], [type="submit"], [type="button"], [type="reset"], label, select {cursor: pointer;}
+input, select, textarea {outline: none;}
+fieldset {overflow: hidden; border: none;}
+legend {display: none;}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"]>input[type="button"]::-moz-focus-inner {padding: 0; border: none;}
+
+
+
+/* Global Styles
+------------------------------------------ */
+h1 {margin: 0 0 0.5em; color: #7c391e; font: bold 3em "DroidSerif",serif;}
+h2 {margin: 1em 0 0.5em; color: #362721; font: bold 1.667em "DroidSerif",serif;}
+h3 {margin: 1em 0; color: #362721; font: bold 1.333em "DroidSerif",serif;}
+h4 {margin: 1em 0; color: #362721; font: bold 1.083em "DroidSerif",serif; text-transform: uppercase;}
+h5 {margin: 1em 0; color: #362721; font: bold 1.083em "DroidSerif",serif;}
+h6 {margin: 1em 0; color: #362721; font: bold 1em "DroidSerif",serif;}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: #362721; text-decoration: none;}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {color: #7c391e; text-decoration: none;}
+blockquote {margin: 1.5em 0; padding: 10px 15px; background: #f4f2e9; color: #65635b; font-style: italic;}
+sub, sup {line-height: 1em;}
+ul li, ol li {margin: 5px 20px;}
+dl {overflow: hidden; margin: 1em 0; }
+dt {float: left; clear: left; width: 150px; margin: 0 0 1em; padding: 0; font-weight: bold;}
+dd {width: 500px; margin: 0 0 1em 150px; }
+p {margin: 1em 0;}
+table {margin: 1em auto; border: 1px solid #bdb68e; background: #fff;}
+table th, table th[class] {padding: 3px 5px; border: 1px solid #bdb68e; background: #cdc9b4;}
+table td, table td[class] {padding: 3px 5px; border: 1px solid #bdb68e;}
+table tr.alternate td {background: #f4f2e9;}
+
+form {margin: 1.5em 0; padding: 10px 20px; background: #f9f4da;}
+label {float: left; clear: left; width: 150px; padding: 5px 0; color: #545251; font-family: "DroidSerif"; text-transform: uppercase;}
+input, select, select[class], textarea {width: 300px; margin: 5px 0; padding: 5px 10px; border: 1px solid #e7dead; background: #fff;}
+input:focus, select:focus, textarea:focus {border-color: #b1481b;}
+select option {padding: 0 5px; }
+input[type="radio"], input[type="checkbox"], input[type="submit"] {width: auto; border: none; background: none;}
+span.required {padding: 0 5px; color: #ff6919; font-weight: bold; font-size: 1.077em;}
+textarea {width: 95%; max-width: 95%; height: 100px;}
+p.form-submit, p.form-allowed-tags {margin-left: 150px;}
+button, input[type="submit"] {height: 26px; padding: 0 15px; border: none; border-radius: 4px;
+background: #6f2907;
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzZmMjkwNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1ZDFkMDQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #6f2907 0%, #5d1d04 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6f2907), color-stop(100%,#5d1d04));
+background: -webkit-linear-gradient(top,  #6f2907 0%,#5d1d04 100%);
+background: -o-linear-gradient(top,  #6f2907 0%,#5d1d04 100%);
+background: -ms-linear-gradient(top,  #6f2907 0%,#5d1d04 100%);
+background: linear-gradient(to bottom,  #6f2907 0%,#5d1d04 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f2907', endColorstr='#5d1d04',GradientType=0 );
+color: #fff; font-weight: bold; font-family: "DroidSans",sans-serif; text-transform: uppercase;}
+button:hover, input[type="submit"]:hover {background: #b1481b;}
+.searchform button {padding: 0 5px;}
+.searchform button span {display: inline-block; width: 20px; height: 24px; background: url("images/search.png") 50% 50% no-repeat;}
+
+/* Main Layout
+------------------------------------------ */
+header {position: relative; z-index: 20; border-bottom: 1px solid #a04d21; background: #bc5a27 url("images/header.png") 0 0 repeat-x; }
+header * {margin: 0; padding: 0;}
+header>div {width: 980px; margin: 0 auto; padding-top: 20px; }
+header p.title {margin: 30px 0 10px; padding: 0; color: #f6e7e0; font: bold 2em "DroidSerif",serif; text-transform: uppercase; text-shadow: 2px 2px 3px rgba(138,56,24,0.75);}
+header p.title a {color: #f6e7e0;}
+header p.title a:hover {color: #fff; text-decoration: none;}
+header p.tagline {margin: 0 0 40px; padding: 0; color: #fcf0eb; font: italic 1.167em "DroidSerif",serif; text-shadow: 2px 2px 3px rgba(138,56,24,0.75);}
+header form {float: right; margin: 0; padding: 1px; border: none; background: rgba(255,255,255,0.4);}
+header form input {width: 150px; margin: 0; padding: 2px 5px; border: 1px solid #7a2d0e; background: #8d3816; color: #e5bcaa; box-shadow: inset 2px 3px 3px #803314;}
+header form button,header form button:hover {width: 20px; height: 21px; padding: 0; border-radius: 0; background: #6d2807 url("images/search.png") 50% 50% no-repeat; line-height: 19px;}
+
+header nav {clear: both; max-width: 780px; margin: 30px 0; padding-left: 10px; background: rgba(27,8,0,0.14);}
+header ul.menu {list-style: none; margin: 0; padding: 0;}
+header ul.menu>li {float: left; position: relative; height: 32px; padding: 0 0 0 10px; background: url("images/mm-separator.png") 0 50% no-repeat;margin:0}
+header ul.menu>li:first-child {padding-left: 0; background: none;}
+header ul.menu>li:hover {z-index: 150;}
+header ul.menu>li>a {float: left; height: 32px; padding: 0 20px; color: #f0e3a5; font: bold 1.167em/32px "DroidSans",sans-serif; text-transform: uppercase; outline: none;}
+header ul.menu>li:first-child>a {padding-left: 10px;}
+header ul.menu>li>a:hover, nav ul.menu>li:hover>a {color: #faf5da; text-decoration: none;}
+header ul.menu>li.current-menu-item>a, header ul.menu>li.current_page_item>a {color: #faf5da; text-decoration: none;}
+header ul.menu>li ul {display: none; position: absolute; left: 10px; top: 32px; width: 200px; list-style: none; font-weight: bold; font-size: 1.083em;}
+header ul.menu li:hover>ul {display:block;}
+header ul.menu>li ul ul {font-size: 1em;}
+header ul.menu>li ul li {float: none; position: relative; overflow: hidden;margin:0}
+header ul.menu>li ul li:hover {overflow: visible;}
+header ul.menu>li ul li a {display: block; padding: 5px 20px; background: #a3491d; color: #f0e3a5; font-size: 1em; font-family: "DroidSans",sans-serif;}
+header ul.menu>li ul li:first-child>a {border-top: none;}
+header ul.menu>li ul li a:hover, nav ul.menu>li ul li:hover>a {background: #bc5a27; color: #faf5da; text-decoration: none;}
+header ul.menu>li ul li ul {top: 0; left: 200px; font-size: 1em;}
+
+
+section {overflow: hidden; border-top: 5px solid #f8f5e3; background: #e6dfbd;
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZGZiZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2Y2ZjNlNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+background: -moz-linear-gradient(top,  #e6dfbd 0%, #f6f3e4 60px);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6dfbd), color-stop(60px,#f6f3e4));
+background: -webkit-linear-gradient(top,  #e6dfbd 0%,#f6f3e4 60px);
+background: -o-linear-gradient(top,  #e6dfbd 0%,#f6f3e4 60px);
+background: -ms-linear-gradient(top,  #e6dfbd 0%,#f6f3e4 60px);
+background: linear-gradient(to bottom,  #e6dfbd 0%,#f6f3e4 60px);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6dfbd', endColorstr='#f6f3e4',GradientType=0 );
+}
+section>div {overflow: hidden; width: 980px; margin: 0 auto; padding: 30px 0;}
+.main {float: left; overflow: hidden; width: 73.5%; padding: 30px; background: #fff; box-shadow: inset 0 0 10px #f1f1f1;}
+aside {float: right; width: 18.7%;}
+
+footer {clear: both; width: 980px; margin: 25px auto; text-align: center;}
+footer p {margin: 5px auto; color: #b3ac80; font-size: 0.917em;}
+footer p a {padding: 0; background: none;}
+footer p a:hover {background: none; color: #b3ac80; text-decoration: none;}
+footer > div > ul.menu {width: 980px; margin: 0 auto 10px; padding: 0; font-size: 0.917em;text-align:center}
+footer > div >ul.menu li {display: inline; margin: 0; padding: 0 10px; border-left: 1px solid #e8e4d0; font-weight: bold; text-transform: uppercase;}
+footer > div > ul.menu li:first-child {padding-left: 0; border-left: none;}
+footer > div > ul.menu li a, footer a {display: inline; float: none; height: auto; padding: 0; font-family: "DroidSans",sans-serif;}
+footer > div > ul.menu li a:hover, footer a:hover, footer > div > ul.menu li.currrent-menu-item a, footer > div > ul.menu li.current_page_item a {color: #bdb68e; text-decoration: none;}
+footer > div > ul.menu ul {display: none;}
+
+/* sidebar
+------------------------------------------ */
+.widget {margin-bottom: 2em;}
+.widget select {width: 185px; margin: 5px 0; padding: 2px 5px; border-color: #bdb68e;}
+aside h3 {margin: 0 0 0.5em; padding: 0 0 1px; border-bottom: 1px solid #bdb68e; color: #362721; font: bold 1.333em "DroidSerif",serif; text-transform: uppercase;}
+aside h3 span {display: block; padding: 5px 0; border-bottom: 2px solid #bdb68e;}
+aside .tagcloud {margin: 1.5em 0; }
+aside ul {list-style: none; margin: 10px 0; padding: 0;}
+aside ul li {margin: 0; padding: 5px 0; border-top: 1px solid #e8e4d0; color: #b3ac80;}
+aside .widget>ul>li:first-child {border-top: none;}
+aside a {color: #877f52;}
+aside ul li.current-menu-item>a, aside ul li.current_page_item>a, aside ul li.current-cat>a,
+aside ul li.current-menu-item>a:visited, aside ul li.current_page_item>a:visited, aside ul li.current-cat>a:visited {font-weight: bold; color: #877f52;}
+aside a:visited, aside .tagcloud a:visited {color: #b3ac80;}
+aside a:hover {color: #b2491a; text-decoration: none;}
+aside ul li ul {margin: 5px 0 -5px;}
+aside ul ul li {padding-left: 20px;}
+aside table {border-color: #bdb68e; font-size: 0.917em;}
+aside th {background: #f5eec9;}
+aside td {text-align: center;}
+aside table a {color: #b2491a;}
+aside table a:hover {color: #877f52;}
+
+footer form,aside form, .main form {margin: 10px 0 5px; padding: 0; border: none; background: none;position:relative; }
+aside form input, .main form input {width: 175px;}
+aside form.searchform input, .main form.searchform input,footer form.searchform input {padding: 2px 5px; border-color: #bdb68e;width:95%!important}
+aside form.searchform button, .main form.searchform button ,footer form.searchform button{width: 20px; height: 21px; padding: 0; border-radius: 0; background: #6d2807 url("images/search.png") 50% 50% no-repeat; line-height: 19px;margin-right:0!important;position:absolute;
+top:5px;right: 1px;}
+
+
+/* post styles
+------------------------------------------ */
+.main article.post, .main article.page {clear: both; overflow: hidden; margin-bottom: 30px; padding: 0;}
+article.post h2, article.page h2 {margin: 1em 0 0.5em; padding: 0; color: #362721; font: bold 2.5em "DroidSerif",serif}
+article.post h2 a, article.page h2 a {color: #362721;}
+article.post.sticky h2, article.post.sticky h2 a {color: #7c391e;}
+article.post h2 a:hover, article.page h2 a:hover {color: #b2491a;}
+article.post.sticky p {color: #735b53; font: normal 1.25em "DroidSerif",serif;}
+p.post-meta {margin: 0 0 2em; padding: 0 5px; background: #f5eec9; color: #817464; font: 400 0.813em/20px "DroidSans",sans-serif; text-transform: uppercase;}
+article.post.sticky p.post-meta {color: #817464; font: 400 0.813em/20px "DroidSans",sans-serif;}
+p.post-meta a {color: #817464;}
+p.post-meta a:hover {color: #b2491a; text-decoration: none;}
+p.more {float: right; margin-top: 1em; padding-left: 30px; }
+p.more a {float: right; overflow: hidden; width: 20px; height: 20px; padding: 0; background: url("images/icons.png") 0 -100px no-repeat; text-indent: -90em;}
+.post img.attachment-post-thumbnail {float: left; margin: 10px 30px 10px 0;}
+p.tags, article.post.sticky p.tags {clear: left; margin-top: 2em; font-size: 0.813em; font-family: "Verdana",sans-serif;}
+p.tags a {color: #bc5a27;}
+p.tags a:hover {color: #817464; text-decoration: none;}
+
+.icon {display: inline-block; width: 12px; height: 12px; margin: 0 5px 0 10px; background: url("images/icons.png"); vertical-align: middle;}
+.icon.date {margin-left: 5px; background-position: -12px 0;}
+.icon.author {background-position: 0 0;}
+.icon.comments {background-position: -36px 0;}
+.icon.cats {background-position: -24px 0;}
+.icon.tags {margin-left: 0; background-position: -48px 0;}
+
+.main label {float: none;}
+
+p.pages a {display: inline-block; padding: 1px 5px; font-weight: bold;}
+p.pages a:hover {background: #f4f2e9; color: #65635b; text-decoration: none;}
+
+/* comments
+------------------------------------------ */
+.comments {clear: both;}
+.comments label {float: left;}
+ul.commentlist {margin: 1em 0;}
+ul.commentlist li {overflow: hidden; margin: 0; padding: 20px; border-bottom: 1px solid #f0ebd1;}
+ul.commentlist li:first-child {border-top: 1px solid #f0ebd1;}
+ul.commentlist li.odd {background: #fcfbf4;}
+ul.commentlist li li {clear: both; margin: 0 0 15px;}
+ul.commentlist ul {clear: both;}
+img.avatar {float: left; margin: 0 15px 0 0; padding: 5px; border: 1px solid #e7dead; background: #fff;}
+.reply {float: right; overflow: hidden; }
+.reply a {float: right; margin-bottom: 15px; font: bold 1.083em "DroidSans",sans-serif; text-transform: uppercase;}
+.reply a:hover {text-decoration: none;}
+ul.commentlist li .comment-body ul {margin: 1em 0; list-style: disc;}
+ul.commentlist li .comment-body ol {margin: 1em 0; list-style: decimal;}
+ul.commentlist li .comment-body li {overflow: visible; margin: 0 0 0 20px; padding: 0; border: none; background: transparent;}
+.comment-meta, .comment-author-vcard {font-size: 0.917em;}
+a#cancel-comment-reply-link {font-size: 0.75em;}
+a.comment-reply-link {font-weight: bold;}
+a.comment-reply-link:hover {color: #65635b;}
+
+/* misc
+------------------------------------------ */
+
+.clear {height: 0; margin: 0; padding: 0; clear: both; float: none; overflow: hidden; border: none;}
+.alignleft {float: left; margin: 5px 15px 5px 0; padding: 0; }
+.alignright {float: right; margin: 5px 0 5px 15px; padding: 0; }
+.aligncenter {display: block; margin: 1em auto; text-align: center;}
+.wp-caption-text {margin: 0.5em 0; color: #444; font-size: 0.917em;}
+.nocomments {clear: both;}
+img.size-thumbnail {margin: 5px;}
+a.post-edit-link {font-size: 0.5em;}
+img {margin: 0; max-width: 720px; height: auto;}
+img.attachment-post-thumbnail, img.attachment-thumbnail {border: none;}
+a:hover img.attachment-post-thumbnail, a:hover img.attachment-thumbnail {background: #f4f2e9;}
+embed {max-width: 720px;}
+.wp-caption img, .wp-caption embed {max-width: 710px;}
+label+.required {margin-left: -15px;}
+
+.gallery {overflow: hidden; padding: 1.5em 0;}
+.gallery dl {text-align: center;}
+.gallery dl dt {float: none; width: auto;}
+.gallery dl dd {clear: left; width: auto; margin: 0; text-align: center;}
+.gallery a img, .gallery a img[class] {padding: 5px; border: none;}
+.gallery a:hover img {background: #f4f2e9; border: none;}
+[id*="gallery"] img {border: none !important;}
+
+.wp-caption {max-width: 720px; padding: 10px 5px 5px; background: #f4f2e9; text-align: center;}
+.gallery-caption {margin: 0 auto; width: 205px; padding: 10px 5px 5px; background: #f4f2e9; text-align: center;}
+
+p.pagination {overflow: hidden; clear: both; margin: 30px 0; padding: 0;}
+p.pagination a {height: 20px; margin: 5px 0; color: #b1481b; font: bold 1em/15px "DroidSans",sans-serif;}
+p.pagination a:hover {color: #b6b4a9; text-decoration: none;}
+p.pagination .prev a {float: left; height: 15px; padding: 0 0 0 15px; background: url("images/prev.png") 0 50% no-repeat;}
+p.pagination .next a {float: right; height: 15px; padding: 0 15px 0 0; background: url("images/next.png") 100% 50% no-repeat;}
+p.pages {clear: both;}
+
+p label {display: inline; margin-bottom: 0;}
+.main h3, .main h2 {clear: both;}
+p.comment-form-comment label {display: block; float: left;}
+
+.gallery-caption {position: static;}
+.bypostauthor {position: static;}
+.theme {width: 980px; margin-left:auto; margin-right:auto; text-align: right;}
+section pre {overflow: auto; width: 610px;}
+
+
+
+/*footer .widget */
+
+footer .widgets h3 {margin: 0 0 0.5em; padding: 0 0 1px; border-bottom: 1px solid #bdb68e; color: #362721; font: bold 1.333em "DroidSerif",serif; text-transform: uppercase;}
+footer .widgets h3 span {display: block; padding: 5px 0; border-bottom: 2px solid #bdb68e;}
+footer .widgets .tagcloud {margin: 1.5em 0; }
+footer .widgets ul {list-style: none; margin: 10px 0; padding: 0;}
+footer .widgets ul li {margin: 0; padding: 5px 0; border-top: 1px solid #e8e4d0; color: #b3ac80;}
+footer .widgets .widget>ul>li:first-child {border-top: none;}
+footer .widgets a {color: #877f52;}
+footer .widgets ul li.current-menu-item>a, footer .widgets ul li.current_page_item>a, footer .widgets ul li.current-cat>a,
+footer .widgets ul li.current-menu-item>a:visited, footer .widgets ul li.current_page_item>a:visited, footer .widgets ul li.current-cat>a:visited {font-weight: bold; color: #877f52;}
+footer .widgets a:visited, footer .widgets .tagcloud a:visited {color: #b3ac80;}
+footer .widgets a:hover {color: #b2491a; text-decoration: none;}
+footer .widgets ul li ul {margin: 5px 0 -5px;}
+aside ul ul li {padding-left: 20px;}
+footer .widgets table {border-color: #bdb68e; font-size: 0.917em;}
+footer .widgets th {background: #f5eec9;}
+footer .widgets td {text-align: center;}
+footer .widgets table a {color: #b2491a;}
+footer .widgets table a:hover {color: #877f52;}
+
+footer .widgets form, .main form {margin: 10px 0 5px; padding: 0; border: none; background: none; }
+footer .widgets form input, .main form input {}
+footer .widgets form.searchform input, .main form.searchform input {padding: 2px 5px; border-color: #bdb68e;}
+footer .widgets form.searchform button, .main form.searchform button {width: 20px; height: 21px; padding: 0; border-radius: 0; background: #6d2807 url("images/search.png") 50% 50% no-repeat; line-height: 19px;}
+
+
+/*custom*/
+.content,
+.theme_author,
+footer,
+header {
+	
+}
+
+input, textarea {
+	max-width: 93%;
+}
+footer form input,
+aside form input {
+	width: 82%;
+}
+footer form.searchform button,
+aside form.searchform button {
+	margin-right: -40px;
+}
+
+select {
+	max-width: 100%;
+}
+nav select {
+	display: none;
+}
+.theme-credits,
+header > div,
+section > div,
+footer > div > ul.menu,
+nav ul.menu,
+footer ,
+.theme,
+nav{
+	width: auto;
+	max-width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+}
+footer,
+.theme,
+section,
+header {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+footer .widgets {
+	overflow: hidden;
+}
+
+footer .widgets .col {
+	width: 23%;
+	float: left;
+	margin: 0;
+	margin-right: 2%;	
+}
+
+footer .widgets .cols:last-child .col:last-child {
+	margin-right: 0;
+	width: 25%;
+}
+
+footer > div {
+	text-align: left;
+}
+#calendar_wrap th,
+	#calendar_wrap td {
+		padding: 5px;
+	}
+	
+
+.gallery-caption {
+	margin: 5px!important;
+}
+img {
+	max-width: 100%;
+}
+embed {
+	max-width: 100%;
+}
+.gallery dl dt {
+	float: none; 
+	width: auto;
+	padding: 0 10px 0 0;
+}
+.gallery img {
+	max-width: 100%;
+}
+.wp-caption img, 
+.wp-caption embed {
+	max-width: 100%;
+}.wp-caption {
+	max-width: 95%;
+}
+img.alignleft,
+img.alignright,
+img.aligncenter {
+	max-width: 95%!important;
+}
+iframe {
+	max-width: 100%;
+}
+footer > div {
+	padding: 0;
+}
+aside .cols .widget:last-child 	{
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1100px) {	
+	.main {
+		padding: 20px;
+		width: 71.5%;	
+	}
+	
+	aside {
+		width: 23%;
+	}
+
+}
+@media only screen and (min-width: 801px) and (max-width: 900px) {	
+	.main {
+		padding: 20px;
+		width: 70%;	
+	}
+	
+	aside {
+		width: 23%;
+	}
+
+}
+
+@media only screen and (min-width: 401px) and (max-width: 800px) {
+	
+	.main {
+		width: auto;
+		clear: both;
+		padding: 10px;
+		float: none;
+	}
+	.main > div {
+		margin-left: 10px;
+		margin-right: 10px;	
+	}
+	p.pagination,
+	.main article.post, .main article.page {
+		margin-left: 10px;	
+		margin-right: 10px;	
+	}
+	aside {
+		border-left: none;
+		border-right: none;
+		padding-top: 15px;	
+		margin-left: 0;
+		margin-right: 0;		
+		width: auto;
+		float: none;
+		clear: both;
+		overflow: hidden;		
+	}
+	aside .cols {
+		width: 50%;
+		float: left;	
+	}
+	aside .cols:first-child .widget{
+		margin-right: 7px;	
+	}	
+	aside .cols:last-child .widget{
+		margin-left: 7px;	
+	}
+	
+	p.post-date {
+		margin-left: 0;
+		margin-right: 7%;
+		width: 45px;	
+	}
+	
+	/*footer*/
+	footer {
+		padding-left: 10px;
+		padding-right: 10px;	
+	}
+	
+	footer .widgets .cols {
+		width: 49%;
+		float: right;	
+	}
+	footer .widgets .cols:first-child {
+		width: 49%;
+		float: left;	
+	}
+	
+	footer .widgets .col {
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
+		vertical-align: top;
+		margin: 0 auto!important;
+		float: left;
+			
+	}
+	
+	footer .widgets .col .widget {
+		margin-right:0;
+		margin-left:0;
+		margin-top: 15px;	
+	}
+	
+	.engine {
+		display: none
+	}
+	section form.searchform input {
+		width: 84%;	
+	}
+	.widget form[class] input, aside form input {
+		width: 77%;
+		padding-right: 0;
+		padding-left: 3%;	
+	}
+	table th, table th[class],
+	table td, table td[class] {
+		padding: 3px 5px;	
+	}
+	footer .widgets .cols:last-child .col:last-child {
+		width: 100%;	
+	}	
+	#calendar_wrap {
+	margin-left: -10px;
+	
+	}
+	
+	#calendar_wrap th,
+	#calendar_wrap td {
+		padding: 3px;
+	}
+	header > div > div {
+			
+	}
+	footer {
+
+	}
+	p.pagination, .main article.post, .main article.page {
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: 0;
+		margin-right: 0;	
+	}
+	.main > div {
+		padding-left: 10px;
+		padding-right: 10px;	
+	}
+	footer > div {
+		padding: 0;	
+	}
+	footer .widgets .col .widget:first-child {
+		margin-top: 0;
+		padding-top: 0;
+	}
+}
+@media only screen and (min-width: 401px) and (max-width: 650px) {
+	header > div > div {
+		overflow: hidden;		
+	}
+}
+/* for mobile divices*/
+@media only screen and (min-width: 50px) and (max-width: 400px) {
+	header p.title a {
+		line-height: 31px;	
+	}
+	.main article.post, .main article.page {
+		padding-left: 10px;
+		padding-right: 10px;	
+	}
+	#calendar_wrap {
+	margin-left: -10px;
+	
+}
+
+#calendar_wrap th,
+#calendar_wrap td {
+	padding: 3px;
+}
+	/*Header*/
+	footer .widgets .cols:last-child .col:last-child {
+		width: 100%;	
+	}	
+	header > div {
+		text-align: center;	
+	}
+	
+	.head-area {
+		float: none;
+		margin:	0 auto;
+		display: inline-block;	
+	}
+	header p.tagline {
+	
+	}
+	nav {
+		border: none;
+		padding: 0 0 30px;	
+	}
+	nav > *{
+		display: none;	
+	}
+	nav select {
+		display: block;
+		margin: 0 auto;	
+	}
+	header > div > div {
+		width: 100%;
+		right: 0;	
+	}
+	header form[class] {
+		float: none;
+		clear: both;
+		margin: 0 auto 20px;
+		position: relative;
+		top: auto;
+		right: auto;
+		max-width: 263px;
+		text-align: left;	
+	}
+	header form input {
+		width: 88.2%;
+		margin-right: -1px;	
+	}
+	header form button {
+		margin-right: -10px;	
+	}
+	
+	/*footer*/
+	footer {
+
+	}
+	footer .widgets .col {
+		clear: both;
+		float: none;
+		width: 100%;	
+	}
+	footer .widgets .col .widget {
+		margin-left: 0!important;
+		margin-right: 0!important;	
+	}
+	.engine {
+		display: none
+	}
+	
+	.main {
+		width: 100%;
+		padding: 15px 0 0;	
+	}
+
+	p.post-date {
+		margin-left: -5px;
+		margin-top: 23px;	
+	}
+	/*aside*/
+	section form.searchform input {
+		width: 87%;	
+	}
+	aside {	
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		border-left: none;
+	}
+	aside .cols {
+		margin: 0 0;
+	}
+	
+	input, select, select[class] {
+		width: 93%;
+		clear: both;	
+	}
+	textarea {
+		min-width: 0;
+		width: 93%;	
+	}
+	
+	
+	.widget form[class] input, aside form input {
+		width: 78%;
+		padding-right: 0;
+		padding-left: 3%;	
+	}	
+	footer .widget form.searchform input {
+		width: 78%; 
+	}
+
+	iframe {
+		max-height: 200px!important;
+	}
+	p.form-submit, p.form-allowed-tags {
+		margin-left: 0;	
+	}
+	
+	.powered {
+		text-align: center;	
+	}
+	nav {
+		padding: 10px 0;
+	}
+	
+	.main {
+		padding: 10px 0;	
+	}
+	.main > div {
+		margin: 10px;
+		padding: 0;	
+	}
+	p.pagination,
+	.main > div article{
+		padding-left: 10px;
+		padding-right: 10px;	
+	}
+	.main article.post, .main article.page {
+		margin-left: 0;
+		margin-right: 0;	
+	}
+	aside {
+		padding-top: 15px;
+		padding-left: 0;
+		padding-right: 0;	
+	}
+	footer > div {
+	}
+}
+@media only screen and (min-width: 50px) and (max-width: 300px) {
+	body {
+		overflow: hidden;	
+	}
+	header form {
+		position: relative;	
+	}
+	
+	header form button {
+		position: absolute;
+		top:1px;
+		right: 1px;
+		margin-right: 0;	
+	}
+	header p.title {
+		font-size: 2.5em;	
+	}
+	#calendar_wrap {
+		margin-left: -10px;
+		margin-right: -10px;	
+	}
+	.widget form[class] input, aside form input {
+		width: 60%;	
+
+	}	
+	footer .widget form.searchform input {
+		width: 60%; 
+	}
+	input, textarea {
+		max-width: 88%;
+	}
+}

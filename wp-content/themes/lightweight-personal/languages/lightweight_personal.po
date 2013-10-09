@@ -1,0 +1,178 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Lightweight Personal\n"
+"POT-Creation-Date: 2013-08-02 17:57+0100\n"
+"PO-Revision-Date: 2013-08-02 17:58+0100\n"
+"Last-Translator: \n"
+"Language-Team:  <info@thememotive.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /"
+"themes/lightweight-personal\n"
+
+#: /lightweight-personal/404.php:3
+msgid "Error 404 - Not Found"
+msgstr ""
+
+#: /lightweight-personal/404.php:4
+msgid "Apologies, but the page you requested could not be found."
+msgstr ""
+
+#: /lightweight-personal/archive.php:17
+msgid "Author Archive"
+msgstr ""
+
+#: /lightweight-personal/archive.php:19
+msgid "Blog Archives"
+msgstr ""
+
+#: /lightweight-personal/archive.php:26
+#: /lightweight-personal/image.php:4
+#: /lightweight-personal/index.php:10
+#: /lightweight-personal/page.php:5
+#: /lightweight-personal/search.php:11
+#: /lightweight-personal/single.php:6
+msgid "Edit this entry"
+msgstr ""
+
+#: /lightweight-personal/archive.php:29
+#: /lightweight-personal/index.php:13
+#: /lightweight-personal/search.php:14
+msgid " "
+msgstr ""
+
+#: /lightweight-personal/archive.php:36
+#: /lightweight-personal/index.php:20
+#: /lightweight-personal/search.php:21
+msgid "Previous Posts"
+msgstr ""
+
+#: /lightweight-personal/archive.php:37
+#: /lightweight-personal/index.php:21
+#: /lightweight-personal/search.php:22
+msgid "Next posts"
+msgstr ""
+
+#: /lightweight-personal/archive.php:41
+#: /lightweight-personal/index.php:24
+msgid "Not found"
+msgstr ""
+
+#: /lightweight-personal/archive.php:42
+#: /lightweight-personal/index.php:25
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr ""
+
+#: /lightweight-personal/comments.php:9
+msgid "Comments are currently closed."
+msgstr ""
+
+#: /lightweight-personal/comments.php:12
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: /lightweight-personal/comments.php:12
+#, php-format
+msgid "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: /lightweight-personal/footer.php:5
+msgid "WordPress"
+msgstr ""
+
+#: /lightweight-personal/footer.php:5
+msgid "theme created by"
+msgstr ""
+
+#: /lightweight-personal/footer.php:5
+msgid "ThemeMotive"
+msgstr ""
+
+#: /lightweight-personal/functions.php:21
+msgid "Header Menu"
+msgstr ""
+
+#: /lightweight-personal/functions.php:22
+msgid "Footer Menu"
+msgstr ""
+
+#: /lightweight-personal/functions.php:32
+msgid "Sidebar Widget Area"
+msgstr ""
+
+#: /lightweight-personal/functions.php:34
+msgid "The sidebar widget area"
+msgstr ""
+
+#: /lightweight-personal/functions.php:42
+msgid "Footer Widget Area 1"
+msgstr ""
+
+#: /lightweight-personal/functions.php:44
+msgid "The footer widget area 1"
+msgstr ""
+
+#: /lightweight-personal/functions.php:51
+msgid "Footer Widget Area 2"
+msgstr ""
+
+#: /lightweight-personal/functions.php:53
+msgid "The footer widget area 2"
+msgstr ""
+
+#: /lightweight-personal/functions.php:60
+msgid "Footer Widget Area 3"
+msgstr ""
+
+#: /lightweight-personal/functions.php:62
+msgid "The footer widget area 3"
+msgstr ""
+
+#: /lightweight-personal/functions.php:69
+msgid "Footer Widget Area 4"
+msgstr ""
+
+#: /lightweight-personal/functions.php:71
+msgid "The footer widget area 4"
+msgstr ""
+
+#: /lightweight-personal/functions.php:114
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: /lightweight-personal/image.php:5
+#, php-format
+msgid "<a href=\"%1$s\">%2$s</a>"
+msgstr ""
+
+#: /lightweight-personal/image.php:8
+#: /lightweight-personal/sidebar.php:5
+#: /lightweight-personal/single.php:8
+msgid "Pages"
+msgstr ""
+
+#: /lightweight-personal/search.php:27
+msgid "No posts found. Try a different search?"
+msgstr ""
+
+#: /lightweight-personal/searchform.php:3
+msgid "Search"
+msgstr ""
+
+#: /lightweight-personal/sidebar.php:11
+msgid "Categories"
+msgstr ""
+
+#: /lightweight-personal/sidebar.php:17
+msgid "Archives"
+msgstr ""
+
+#: /lightweight-personal/sidebar.php:24
+msgid "Meta"
+msgstr ""
